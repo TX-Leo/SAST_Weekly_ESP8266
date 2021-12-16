@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes' />
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>MeiShang Smarthome Control System</title>
+  <style>	
+   /* --------------------------选项卡代码------------------------- */
+    .tabs {
+      width: 360px;
+      margin: 0px auto;         /* 选项卡背景 */
+      background-color: LightCyan;
+      border: 0px solid #FFF;
+      box-sizing: border-box;
+    }
+    .tabs nav {
+      height: 50px;
+      text-align: center;
+      line-height: 28px;
+      overflow: hidden;
+      background-color: DarkCyan;        /* 选项卡 */
+      display: flex;
+      margin: -0.5px auto; 
+    }
+    nav a {
+      display: block;                   /* 选项卡 */
+      width: 51.4px;
+      border-right: 0px solid #fff;
+      font-size:15px;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    nav a:last-child {
+      border-right: none;
+    }
+    nav a.active {
+      background-color: DarkTurquoise	;
+    }
+    .cont {
+      overflow: hidden;
+      display: none;
+    }
+    .cont ol {
+      line-height: 20px;
+    }
+/* -------------------------按钮控制代码---------------------------------------------------------------- */
+h2,h1{line-height:1%;}
+body {
+	margin: 0;
+  padding: 0;
+	background: LightCyan
+}
+
+.demo_con {
+	width: 360px;
+	margin: 40px auto 0
+}
+
+.button {
+	width: 75px;
+	height: 70px;
+	text-align: center;
+	font-weight: 700;
+	color: #FFF;
+	border-radius: 1px;
+	margin: 0 -4.5px 40px 0;
+	position: relative;
+	overflow: hidden;
+	outline: none;
+	border: 0px solid #FFF;
+	background: darkcyan;
+	font-size: 18px;
+	outline:none; 
+}
+.button.top1 {
+	width: 360px;
+	height: 45px;
+	border: 0px ;
+	background: darkcyan;
+	font-size: 25px;
+	left: -40px; position: relative;
+	top: -16px;
+}
+.button.on {
+	width: 30px;
+	color: Lime;
+	background: DarkTurquoise;
+	border-radius: 15px 0px 0px 15px;
+	}
+.button.off {
+	width: 30px;
+	color: red;
+	background: DarkTurquoise;
+	border-radius: 0px 15px 15px 0px;
+	}
+.button1 {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	font-weight: 100;
+	color: darkcyan;
+	margin: 0 40px 35px 0;
+	position: relative;
+	border: 6px solid darkcyan;
+	background: LightCyan;
+	font-size: 20px;
+	border-radius: 50%;
+	outline:none; 
+}
+</style>
+</head>
+
+<body>
+  <div class='tabs'>
+    <section class='cont' id='Page1' style='display:block'>
+      <ol>
+<center><span style='left: -20px; position: relative;' id='time1'> Time Loading ......</span><script>setInterval('time1.innerHTML=new Date().toLocaleString()',1000);</script></center>
+
+
+<center ></br>      <!--          总控               -->
+<a href='./pin?light1=1'><button type='button' class='button1'>&#x8D77; &#x5E8A;</button></a>
+<a href='./pin?light1=0'><button type='button' class='button1'>&#x7528; &#x9910;</button></a>
+<a href='./pin?light2=1'><button type='button' class='button1'>&#x4F1A; &#x5BA2;</button></a>
+<a href='./pin?light2=0'><button type='button' class='button1'>&#x7761; &#x7720;</button></a>
+<a href='./pin?light3=1'><button type='button' class='button1'>&#x79BB; &#x5BB6;</button></a>
+<a href='./pin?light3=0'><button type='button' class='button1'>&#x56DE; &#x5BB6;</button></a>
+</br>
+</center>
+      </ol>
+    </section>
+    <section class='cont' id='Page2' >      <!--          客厅              -->
+      <ol>
+<button class='button top1'>&#x5BA2; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x5385;</button></a>
+<center style='left: -20px; position: relative;'>   
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x5BA2; &#x5385;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x9910; &#x5385;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7A97; &#x5E18;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7A7A; &#x8C03;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+</center>
+      </ol>
+    </section>
+    <section class='cont' id='Page3'>      <!--          卧室              -->
+      <ol>
+<button class='button top1'>&#x5367; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x5BA4;</button></a>
+<center style='left: -20px; position: relative;'>  
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7167; &#x660E;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x591C; &#x706F;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7A97; &#x5E18;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7A7A; &#x8C03;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+</center>
+      </ol>
+    </section>
+    <section class='cont' id='Page4'>      <!--          书房              -->
+      <ol>
+<button class='button top1'>&#x4E66; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x623F;</button></a>
+<center style='left: -20px; position: relative;'>   
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7167; &#x660E;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x591C; &#x706F;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7A97; &#x5E18;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7A7A; &#x8C03;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+</center>
+      </ol>
+    </section>
+        <section class='cont' id='Page5'>      <!--          厨房              -->
+      <ol>
+<button class='button top1'>&#x53A8; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x623F;</button></a>
+<center style='left: -20px; position: relative;'>    
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7167; &#x660E;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x6CB9;&#x70DF;&#x673A;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x70ED;&#x6C34;&#x5668;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7535;&#x996D;&#x7172;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+</center>
+      </ol>
+    </section>
+        <section class='cont' id='Page6'>      <!--          阳台              -->
+      <ol>
+<button class='button top1'>&#x9633; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x53F0;</button></a>
+<center style='left: -20px; position: relative;'>   
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7167; &#x660E;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x6D17;&#x8863;&#x673A;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+ 
+</center>
+      </ol>
+    </section>
+            <section class='cont' id='Page7'>      <!--          浴室              -->
+      <ol>
+<button class='button top1'>&#x6D74; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x5BA4;</button></a>
+<center style='left: -20px; position: relative;'>   
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x7167; &#x660E;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x955C;&#x524D;&#x706F;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br> 
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x53D6; &#x6696;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='./pin?light1=1'><button type='button' class='button on '>&#x2714;</button></a>
+<button type='button' class='button '>&#x6362; &#x6C14;</button>
+<a href='./pin?light1=0'><button type='button' class='button off'>&#x2718;</button></a>
+</br>
+
+</center>
+      </ol>
+    </section>
+
+
+<!-- ------------------------------底部选项卡---------------->
+    <nav style='bottom:1px; position:absolute;'>
+      <a href='javascript:;' data-cont='Page1' class='active'><div style='font-size:20px'>&#x24C2;</div><span>&#x4E3B; &#x9875;</span></a>
+      <a href='javascript:;' data-cont='Page2'><div style='font-size:30px'>&#x274F;</div><span>&#x5BA2; &#x5385;</span></a>
+      <a href='javascript:;' data-cont='Page3'><div style='font-size:30px'>&#x260A;</div><span>&#x5367; &#x5BA4;</span></a>
+      <a href='javascript:;' data-cont='Page4'><div style='font-size:30px'>&#x270E;</div><span>&#x4E66; &#x623F;</span></a>
+      <a href='javascript:;' data-cont='Page5'><div style='font-size:30px'>&#x2756;</div><span>&#x53A8; &#x623F;</span></a>
+      <a href='javascript:;' data-cont='Page6'><div style='font-size:30px'>&#x2600;</div><span>&#x9633; &#x53F0;</span></a>
+      <a href='javascript:;' data-cont='Page7'><div style='font-size:30px'>&#x25A6;</div><span>&#x6D74; &#x5BA4;</span></a>
+    
+    </nav>
+  </div>
+<!-- ------------------------------开启自动打开总控---------------->
+<script>
+  var aArr=document.querySelectorAll('a');
+  for(var i=0;i<aArr.length;i++){
+      aArr[i].onclick=function(){
+         var active=document.querySelector('.active');
+         active.classList.remove('active');
+         this.classList.add('active');
+         var name=this.getAttribute('data-cont');
+         var section=document.getElementById(name);
+         var cont = document.getElementsByClassName('cont');
+         for(var i=0;i<cont.length;i++){
+          cont[i].style.display='none';
+         }
+         section.style.display='block';
+      }
+  }
+</script>
+</body>
+</html>
+
